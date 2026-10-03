@@ -1,0 +1,5 @@
+{
+  "modelos": [
+    { "id": "hoodie", "nombre": "Hoodie", "archivo": "modelos/hoodie.glb" }
+  ]
+}
