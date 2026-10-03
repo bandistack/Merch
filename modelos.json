@@ -1,7 +1,7 @@
 {
   "modelos": [
-    { "id": "hoodie", "nombre": "Hoodie (130k)", "archivo": "modelos/hoodie.glb", "price": 140000 },
-    { "id": "tshirt", "nombre": "Camisa (80k)", "archivo": "modelos/tshirt.glb" , "price": 90000 },
-    { "id": "jogger", "nombre": "Jogger (80k)", "archivo": "modelos/jogger.glb" , "price": 120000 }
+    { "id": "hoodie", "nombre": "Hoodie Unisex", "archivo": "modelos/hoodie.glb", "price": 140000 },
+    { "id": "tshirt", "nombre": "Camisa Hombre", "archivo": "modelos/tshirt.glb" , "price": 90000 },
+    { "id": "jogger", "nombre": "Jogger Hombre", "archivo": "modelos/jogger.glb" , "price": 120000 }
   ]
 }
