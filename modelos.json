@@ -1,5 +1,6 @@
 {
   "modelos": [
-    { "id": "hoodie", "nombre": "Hoodie (100k)", "archivo": "modelos/hoodie.glb" }
+    { "id": "hoodie", "nombre": "Hoodie (130k)", "archivo": "modelos/hoodie.glb" },
+    { "id": "tshirt", "nombre": "Camisa (80k)", "archivo": "modelos/tshirt.glb" }
   ]
 }
