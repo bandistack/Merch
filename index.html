@@ -61,6 +61,14 @@
     document.title = m.nombre + " - Merch Oficial";
     lista.querySelectorAll("button").forEach(b => b.classList.toggle("on", b.dataset.id === m.id));
     history.replaceState(null, "", "?m=" + m.id);
+    if (m.price !== undefined && m.price !== "") {
+      etiquetaPrecio.textContent = typeof m.price === "number"
+        ? "$" + m.price.toLocaleString("es-CO")
+        : m.price;
+      etiquetaPrecio.hidden = false;
+    } else {
+      etiquetaPrecio.hidden = true;
+    }
   }
 
   fetch("modelos.json")
