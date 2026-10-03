@@ -1,6 +1,0 @@
-{
-  "modelos": [
-    { "id": "hoodie", "nombre": "Hoodie", "archivo": "modelos/hoodie.glb" },
-    { "id": "gorra", "nombre": "Gorra", "archivo": "modelos/gorra.glb" }
-  ]
-}
