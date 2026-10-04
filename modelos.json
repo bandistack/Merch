@@ -1,7 +1,10 @@
 {
   "modelos": [
-    { "id": "hoodie", "nombre": "Hoodie", "archivo": "modelos/hoodie.glb", "price": 140000 },
-    { "id": "regular", "nombre": "Camisa regular", "archivo": "modelos/regular.glb" , "price": 90000 },
-    { "id": "jogger", "nombre": "Jogger", "archivo": "modelos/jogger.glb" , "price": 130000 }
+    { "id": "hoodie", "nombre": "Hoodie", "archivo": "modelos/hoodie.glb", "price": 140000,
+      "descripcion": "Hoodie de algodón grueso con capucha. Bordado en el pecho." },
+    { "id": "regular", "nombre": "Camisa regular", "archivo": "modelos/regular.glb", "price": 90000,
+      "descripcion": "Camisa de corte regular, tela suave y fresca." },
+    { "id": "jogger", "nombre": "Jogger", "archivo": "modelos/jogger.glb", "price": 130000,
+      "descripcion": "Jogger cómodo con puños elásticos." }
   ]
 }
