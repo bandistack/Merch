@@ -12,7 +12,8 @@
   header { padding:20px 24px 8px; }
   h1 { margin:0; font-size:1.6rem; }
   p.hint { margin:6px 0 0; color:var(--muted); font-size:.95rem; }
-  main { display:grid; grid-template-columns: 1fr 220px; gap:16px; padding:16px 24px 24px; }
+  main { display:grid; grid-template-columns: 1fr 220px; gap:16px; padding:16px 24px 24px; align-items:start; }
+  .col-visor { display:flex; flex-direction:column; gap:16px; min-width:0; }
   model-viewer { width:100%; height:70vh; min-height:360px; border-radius:12px; --poster-color:transparent;
     background: radial-gradient(ellipse at 50% 30%, #3b3e47 0%, #1f2126 55%, #121316 100%); }
   .visor-wrap { position:relative; }
@@ -20,6 +21,14 @@
     background:var(--accent); color:#10211f; font-weight:700; font-size:1.1rem;
     padding:8px 14px; border-radius:999px; box-shadow:0 2px 10px rgba(0,0,0,.35); }
   .etiqueta[hidden] { display:none; }
+
+  /* Panel de descripción */
+  .descripcion { background:var(--panel); border-radius:12px; padding:18px 20px; }
+  .descripcion[hidden] { display:none; }
+  .descripcion h2 { margin:0 0 8px; font-size:1.2rem; }
+  .descripcion p { margin:0 0 10px; line-height:1.55; color:var(--text); max-width:70ch; }
+  .descripcion p:last-child { margin-bottom:0; }
+
   nav { display:flex; flex-direction:column; gap:8px; }
   nav button { text-align:left; padding:12px 14px; border:2px solid transparent; border-radius:10px;
     background:var(--panel); color:var(--text); font-size:1rem; cursor:pointer; }
@@ -28,7 +37,7 @@
   nav button:focus-visible { outline:3px solid var(--accent); outline-offset:2px; }
   @media (max-width:700px) {
     main { grid-template-columns:1fr; padding:12px; }
-    nav { flex-direction:row; flex-wrap:wrap; }
+    nav { flex-direction:row; flex-wrap:wrap; order:-1; }
     model-viewer { height:60vh; }
   }
 </style>
@@ -39,23 +48,49 @@
   <p class="hint">Arrastra para girar, usa la rueda o pellizca para acercar.</p>
 </header>
 <main>
-  <div class="visor-wrap">
-    <span id="precio" class="etiqueta" hidden></span>
-    <model-viewer id="visor" camera-controls auto-rotate touch-action="pan-y"
-      environment-image="neutral"
-      exposure="1.6" tone-mapping="neutral"
-      shadow-intensity="1.3" shadow-softness="0.9"
-      alt="Modelo 3D"></model-viewer>
+  <div class="col-visor">
+    <div class="visor-wrap">
+      <span id="precio" class="etiqueta" hidden></span>
+      <model-viewer id="visor" camera-controls auto-rotate touch-action="pan-y"
+        environment-image="neutral"
+        exposure="1.6" tone-mapping="neutral"
+        shadow-intensity="1.3" shadow-softness="0.9"
+        alt="Modelo 3D"></model-viewer>
+    </div>
+
+    <section id="descripcion" class="descripcion" aria-live="polite" hidden>
+      <h2 id="descTitulo"></h2>
+      <div id="descTexto"></div>
+    </section>
   </div>
+
   <nav id="lista" aria-label="Modelos"></nav>
 </main>
 
 <script>
   // La lista de modelos vive en modelos.json (misma carpeta que este archivo).
+  // Campos por modelo: id, nombre, archivo, price (opcional), descripcion (opcional).
   const visor = document.getElementById("visor");
   const lista = document.getElementById("lista");
   const etiquetaPrecio = document.getElementById("precio");
+  const panelDesc = document.getElementById("descripcion");
+  const descTitulo = document.getElementById("descTitulo");
+  const descTexto = document.getElementById("descTexto");
   let MODELOS = [];
+
+  function mostrarDescripcion(m) {
+    descTexto.replaceChildren();
+    const texto = (m.descripcion || "").toString().trim();
+    if (!texto) { panelDesc.hidden = true; return; }
+    descTitulo.textContent = m.nombre;
+    // Cada salto de línea (\n) del JSON se convierte en un párrafo nuevo.
+    texto.split("\n").filter(Boolean).forEach(linea => {
+      const p = document.createElement("p");
+      p.textContent = linea;
+      descTexto.appendChild(p);
+    });
+    panelDesc.hidden = false;
+  }
 
   function mostrar(m) {
     visor.src = m.archivo;
@@ -71,6 +106,7 @@
     } else {
       etiquetaPrecio.hidden = true;
     }
+    mostrarDescripcion(m);
   }
 
   fetch("modelos.json")
