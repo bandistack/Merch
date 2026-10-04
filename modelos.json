@@ -2,7 +2,6 @@
   "modelos": [
     { "id": "hoodie", "nombre": "Hoodie", "archivo": "modelos/hoodie.glb", "price": 140000 },
     { "id": "regular", "nombre": "Camisa regular", "archivo": "modelos/regular.glb" , "price": 90000 },
-    { "id": "oversize", "nombre": "Camisa Oversize", "archivo": "modelos/oversize.glb" , "price": 100000 },
     { "id": "jogger", "nombre": "Jogger", "archivo": "modelos/jogger.glb" , "price": 130000 }
   ]
 }
