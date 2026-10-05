@@ -1,8 +1,30 @@
 {
+  "sitio": {
+    "idioma": "es",
+    "titulo": "Merch Oficial",
+    "ayuda": "Arrastra para girar, usa la rueda o pellizca para acercar.",
+    "logo": "logohoodie.svg",
+    "moneda": "$",
+    "locale": "es-CO",
+    "etiquetas": {
+      "producto": "Producto",
+      "precio": "Precio",
+      "descripcion": "Descripción",
+      "detalles": "Detalles"
+    }
+  },
   "modelos": [
-    { "id": "hoodiebiglogo", "nombre": "Hoodie Gran Logo", "archivo": "modelos/hoodiebiglogo.glb", "price": 120000,
-      "descripcion": "Hoodie de algodón grueso con capucha. Bordado en el pecho. Estampado en brazos y espalda" },
-    { "id": "hoodieclass", "nombre": "Hoodie Clásico", "archivo": "modelos/hoodieclass.glb", "price": 100000,
-      "descripcion": "Hoodie de algodón grueso con capucha. Bordado en el pecho." }
+    {
+      "id": "hoodie",
+      "nombre": "Hoodie",
+      "archivo": "hoodie.glb",
+      "price": 120000,
+      "descripcion": "Primer párrafo.\nSegundo párrafo.",
+      "detalles": {
+        "Material": "Algodón",
+        "Tallas": "S – XL",
+        "Color": "Negro"
+      }
+    }
   ]
 }
