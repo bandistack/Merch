@@ -4,12 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Merch Oficial</title>
+<link rel="icon" type="image/svg+xml" href="logohoodie.svg">
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
 <style>
   :root { --bg:#16181d; --panel:#21242b; --text:#f2f0eb; --muted:#9a9ca3; --accent:#7ad0c4; }
   * { box-sizing: border-box; }
   body { margin:0; font-family: system-ui, sans-serif; background:var(--bg); color:var(--text); }
-  header { padding:20px 24px 8px; }
+  header { padding:20px 24px 8px; display:flex; align-items:center; gap:14px; }
+  .logo { width:56px; height:56px; flex:none; display:block; }
+  .titulos { min-width:0; }
   h1 { margin:0; font-size:1.6rem; }
   p.hint { margin:6px 0 0; color:var(--muted); font-size:.95rem; }
   main { display:grid; grid-template-columns: 1fr 220px; gap:16px; padding:16px 24px 24px; align-items:start; }
@@ -36,6 +39,7 @@
   nav button.on { border-color:var(--accent); }
   nav button:focus-visible { outline:3px solid var(--accent); outline-offset:2px; }
   @media (max-width:700px) {
+    .logo { width:44px; height:44px; }
     main { grid-template-columns:1fr; padding:12px; }
     nav { flex-direction:row; flex-wrap:wrap; order:-1; }
     model-viewer { height:60vh; }
@@ -44,8 +48,11 @@
 </head>
 <body>
 <header>
-  <h1>Merch Oficial</h1>
-  <p class="hint">Arrastra para girar, usa la rueda o pellizca para acercar.</p>
+  <img class="logo" src="logohoodie.svg" alt="Logo">
+  <div class="titulos">
+    <h1>Merch Oficial</h1>
+    <p class="hint">Arrastra para girar, usa la rueda o pellizca para acercar.</p>
+  </div>
 </header>
 <main>
   <div class="col-visor">
