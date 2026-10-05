@@ -17,7 +17,7 @@
     {
       "id": "hoodie",
       "nombre": "Hoodie",
-      "archivo": "hoodie.glb",
+      "archivo": "hoodieclass.glb",
       "price": 120000,
       "descripcion": "Primer párrafo.\nSegundo párrafo.",
       "detalles": {
