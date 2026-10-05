@@ -1,6 +1,6 @@
 {
   "modelos": [
-    { "id": "hoodie", "nombre": "Hoodie", "archivo": "modelos/hoodie.glb", "price": 140000,
+    { "id": "hoodiebiglogo", "nombre": "Hoodie", "archivo": "modelos/hoodie.glb", "price": 140000,
       "descripcion": "Hoodie de algodón grueso con capucha. Bordado en el pecho." },
     { "id": "regular", "nombre": "Camisa regular", "archivo": "modelos/regular.glb", "price": 90000,
       "descripcion": "Camisa de corte regular, tela suave y fresca." },
