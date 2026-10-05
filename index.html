@@ -3,11 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Drops</title>
+<title>Merch Oficial</title>
 <link rel="icon" type="image/svg+xml" href="logohoodie.svg">
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
 <style>
-  :root { --bg:#16181d; --panel:#21242b; --text:#f2f0eb; --muted:#9a9ca3; --accent:#7ad0c4; }
+  :root { color-scheme: light dark;
+    --bg:#16181d; --panel:#21242b; --text:#f2f0eb; --muted:#9a9ca3; --accent:#7ad0c4; }
+
+  /* Modo claro: se activa si el dispositivo/navegador está en tema claro */
+  @media (prefers-color-scheme: light) {
+    :root { --bg:#f4f2ee; --panel:#e6e3dc; --text:#1c1d21; --muted:#5f6168; }
+    .logo { filter: invert(1); } /* el logo es gris claro; se oscurece sobre fondo claro */
+  }
   * { box-sizing: border-box; }
   body { margin:0; font-family: system-ui, sans-serif; background:var(--bg); color:var(--text); }
   header { padding:20px 24px 8px; display:flex; align-items:center; gap:14px; }
@@ -50,7 +57,7 @@
 <header>
   <img class="logo" src="logohoodie.svg" alt="Logo">
   <div class="titulos">
-    <h1>Nuestros Drops</h1>
+    <h1>Merch Oficial</h1>
     <p class="hint">Arrastra para girar, usa la rueda o pellizca para acercar.</p>
   </div>
 </header>
